@@ -88,7 +88,7 @@ def product_list(request):
 @login_required
 def product_new(request):
     if request.method == "POST":
-       form = Product(request.POST)
+       form = ProductForm(request.POST)
        if form.is_valid():
            product = form.save(commit=False)
            product.created_date = timezone.now()
